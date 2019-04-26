@@ -9,19 +9,20 @@
 <body>
     <div class="container" style="margin-top: 178px">
     <div class="card " style="width: 448px;height: 520px; border-radius: 8px;border-width: 2px;font-family: font-family: roboto;margin: auto">
-    <div class="card-body" style="margin: 17px">
+    <form action="<?php echo base_url('C_signin/login') ?>" method="post" class="card-body" style="margin: 17px">
         <div class="text-center" style="margin-top: 20px"><img style="width: 101px; height: 74px;" src="http://logosvg.com/wp-content/uploads/2016/08/Google_logo-1.png"></div>
-        <div class="text-center" style="font-size: 24px">Hi User</div>
-        <div class="text-center border rounded-pill" style="font-size: 16px;margin-left: 30px; margin-right: 30px">email</div>
+        <div class="text-center" style="font-size: 24px">Welcome</div>
+        <div class="text-center border rounded-pill" style="font-size: 16px;margin-left: 30px; margin-right: 30px"><?php echo $this->session->userdata('email');?></div>
          <div class="form-group" style="margin-top: 30px">
-            <input style="height: 54px" type="password" class="form-control" id="Pass" placeholder="Enter your password">
+            <input style="height: 54px" type="password" class="form-control" name="pass" placeholder="Enter your password">
+            
         </div>        
             <div style="margin-top: 50px;">
                  <a href="" class="font-weight-bold" style=""> Forgot password</a>  
-                 <button type="submit" class="btn btn-primary float-right" style="width: 92px">Next</button>
+                <button type="submit" class="btn btn-primary float-right" style="width: 92px">Next</button>
             </div>
                 
-        </div>
+        </form>
     </div>
        <div style="margin: auto;width: 448px; font-family: font-family: roboto; margin-top: 20px;font-size: 12px"> 
         <div class="row">

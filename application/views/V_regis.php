@@ -8,30 +8,30 @@
 <body>
     <div class="container" style="margin-top: 178px">
     <div class="card " style="width: 748px;height: 551px; border-radius: 8px;border-width: 2px;font-family: roboto;margin: auto">
-    <div class="card-body" style="margin: 15px; float: left;width: 440px">
+    <form action="<?php echo base_url('C_signin/tambah')?>" method="post" class="card-body" style="margin: 15px; float: left;width: 440px">
         <div class="" style=""><img style="width: 101px; height: 74px;" src="http://logosvg.com/wp-content/uploads/2016/08/Google_logo-1.png"></div>
         <div class="text-left" style="font-size: 24px">Create your Google Account</div>
          <div class="form-group" style="margin-top: 20px; margin-bottom: 30px">
              <div class="row">
-            <input style="height: 34px;width: 174px; margin-left: 14px"type="text" class="form-control" id="FirstName"placeholder="First name">
-            <input style="height: 34px;width: 174px; margin-left: 14px"type="text" class="form-control" id="FirstName"placeholder="Last name">
+            <input style="height: 34px;width: 174px; margin-left: 14px"type="text" class="form-control" id="firstname" name="firstname" placeholder="First name">
+            <input style="height: 34px;width: 174px; margin-left: 14px"type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name">
              </div>
         </div>
-        <input style="width: 364px; height: 32px" type="email" class="form-control" id="InputEmail1" placeholder="Username">
+        <input style="width: 364px; height: 32px" type="email" class="form-control" id="InputEmail1" name="email" placeholder="Username">
         <div style="font-size: 13px; margin-top: 3px">  You can use letters, numbers & periods </div>
         <a href="" class="" style=" font-size: 15px; margin-top: 8px"> Use my current email address instead</a>    
         <div style="margin-top: 24px; margin-bottom: 8px" class="row">
-            <input style="height: 34px;width: 150px; margin-left: 14px"type="password" class="form-control" id="Pass"placeholder="Password">
-            <input style="height: 34px;width: 150px; margin-left: 14px"type="password" class="form-control" id="Conf"placeholder="Confirm">
+            <input style="height: 34px;width: 150px; margin-left: 14px"type="password" class="form-control" id="Pass" name ="pass"placeholder="Password">
+            <input style="height: 34px;width: 150px; margin-left: 14px"type="password" class="form-control" name="konfirm" id="Conf"placeholder="Confirm">
              <div style="width: 48px; margin: auto"><img src="https://img.icons8.com/material-outlined/24/000000/hide.png"></div>
         </div>
         <div style="font-size: 13px; margin: 3px; width: 338px">  Use 8 or more characters with a mix of letters, numbers & symbols </div>
         
             <div style="margin-top: 50px;">
                  <a href="<?php echo base_url('C_signin/index') ?>" class="font-weight-bold" style=""> Sign in instead</a>  
-                 <button type="submit" class="btn btn-primary float-right" style="width: 92px">Next</button>
+                 <button type="submit" name="tambah" class="btn btn-primary float-right" style="width: 92px">Next</button>
             </div>
-        </div>
+        </form>
     </div>
     </div> 
     
