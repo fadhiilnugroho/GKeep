@@ -41,6 +41,11 @@ class C_signin extends CI_Controller {
     }
     public function tambah()
 	{
+        
+        $this->form_validation->set_rules('firstname', 'Firstname', 'required');
+        $this->form_validation->set_rules('lastname', 'Lastname', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('konfirm', 'Konfirm', 'required');
 	   $data = array(
             'first_name' => $this->input->post('firstname'),
             'last_name' => $this->input->post('lastname'),
@@ -49,20 +54,27 @@ class C_signin extends CI_Controller {
         );
         $user = $this->M_web->GetUserbyEmail($data['email']);//mengecek apakah email sudah terdaftar
         $conf = $this->input->post('konfirm');//konifrmasi bahwa password sama/benar
-        if(($user == false) && ($data['password']==$conf)){   
-            $this->M_web->InsertUser($data);//masukkan ke database
-            redirect('C_signin/Index');	
+        if(($user == false && $this->form_validation->run() == TRUE) ){ 
+            if(($data['password']==$conf)){
+                $this->M_web->InsertUser($data);//masukkan ke database
+                 redirect('C_signin/Index');	
+            }else{
+                $this->session->set_flashdata('alertP', 'Password salah');
+                redirect('C_signin/regis');
+            }
         }else{
-            redirect('C_signin/regis');	
+            redirect('C_signin/regis');
+            $this->session->set_flashdata('alertE', 'Email telah terdaftar');
         }
 	}
-    public function CekPassword()
+    public function CekAkun()
 	{
         $email = $this->input->post('email');//ambil nilai email pada form
         $user = $this->M_web->GetUserbyEmail($email);//cek apakah akun terdaftar
-        if($user == false){
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        if($user == false|| $this->form_validation->run() == FALSE){
+            $this->session->set_flashdata('alert', 'akun tidak terdaftar');
             redirect('C_signin/Index');	
-             $this->session->set_flashdata('alert', 'akun tidak terdaftar');
         }else{
             $this->session->set_userdata('email',$email);//jadikan session
             $this->session->set_userdata('username',$user['first_name']);

@@ -17,7 +17,8 @@
             <input style="height: 34px;width: 174px; margin-left: 14px"type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name">
              </div>
         </div>
-        <input style="width: 364px; height: 32px" type="email" class="form-control" id="InputEmail1" name="email" placeholder="Username">
+        <input style="width: 364px; height: 32px" type="email" class="form-control" id="email1" name="email" placeholder="Username">
+        <p style="color:red; font-size:12px"><?php echo $this->session->flashdata('alertE');?></p>
         <div style="font-size: 13px; margin-top: 3px">  You can use letters, numbers & periods </div>
         <a href="" class="" style=" font-size: 15px; margin-top: 8px"> Use my current email address instead</a>    
         <div style="margin-top: 24px; margin-bottom: 8px" class="row">
@@ -25,6 +26,7 @@
             <input style="height: 34px;width: 150px; margin-left: 14px"type="password" class="form-control" name="konfirm" id="Conf"placeholder="Confirm">
              <div style="width: 48px; margin: auto"><img src="https://img.icons8.com/material-outlined/24/000000/hide.png"></div>
         </div>
+        <p style="color:red; font-size:12px"><?php echo $this->session->flashdata('alertP');?></p>
         <div style="font-size: 13px; margin: 3px; width: 338px">  Use 8 or more characters with a mix of letters, numbers & symbols </div>
         
             <div style="margin-top: 50px;">

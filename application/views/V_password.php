@@ -15,7 +15,7 @@
         <div class="text-center border rounded-pill" style="font-size: 16px;margin-left: 30px; margin-right: 30px"><?php echo $this->session->userdata('email');?></div>
          <div class="form-group" style="margin-top: 30px">
             <input style="height: 54px" type="password" class="form-control" name="pass" placeholder="Enter your password">
-            
+            <p style="color:red; font-size:12px"><?php echo $this->session->flashdata('alert');?></p>
         </div>        
             <div style="margin-top: 50px;">
                  <a href="" class="font-weight-bold" style=""> Forgot password</a>  

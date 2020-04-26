@@ -12,12 +12,13 @@
 <body>
     <div class="container" style="margin-top: 178px">
     <div class="card " style="width: 448px;height: 520px; border-radius: 8px;border-width: 2px;font-family: roboto;margin: auto">
-    <form action="<?php echo base_url('C_signin/CekPassword')?>" method="post" class="card-body" style="margin: 17px">
+    <form action="<?php echo base_url('C_signin/CekAkun')?>" method="post" class="card-body" style="margin: 17px">
         <div class="text-center" style=""><img style="width: 101px; height: 74px;" src="http://logosvg.com/wp-content/uploads/2016/08/Google_logo-1.png"></div>
         <div class="text-center" style="font-size: 24px">Sign in</div>
         <div class="text-center" style="font-size: 16px;margin: 2px">with your Google Account</div>
          <div class="form-group" style="margin-top: 30px">
             <input style="height: 54px" type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email or Phone">
+            <p style="color:red; font-size:12px"><?php echo $this->session->flashdata('alert');?></p>
         </div>
         <a href="" class="font-weight-bold" style=""> Forgot email ?</a>    
         <div style="margin-top: 40px; font-size: 14px">Not your computer? Use Guest mode to sign in privately.</div>
